@@ -9,6 +9,17 @@ def index(request):
     return render(request, 'clinicas/index.html')
 
 
-def produtos(request):
-    produtos = Produto.objects.all()
-    return render(request, 'clinicas/produtoos.html')
+def produto(request):
+    return render(request, 'clinicas/produtos.html')
+
+
+def carrinho(request):
+    return render(request, 'clinicas/carrinho.html')
+
+
+def agendamento(request):
+    return render(request, 'clinicas/agendamento.html')
+
+
+def blog(request):
+    return render(request, 'clinicas/blog.html')

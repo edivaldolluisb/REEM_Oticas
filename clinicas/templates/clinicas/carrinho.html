@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{% static 'css/carrinho.css' %}}">
+    <link rel="stylesheet" href="{% static 'css/carrinho.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,7 @@
 </head>
 
 <body>
-    <a href="./produtos.html"><img class="close" src="{{% static 'imagens/icones/icons8-delete.gif' %}}" alt="fechar"></a>
+    <a href="{% url 'produto' %}"><img class="close" src="{% static 'imagens/icones/icons8-delete.gif' %}" alt="fechar"></a>
     <h1>Carrinho de compras</h1>
     <section id="dados">
         <p class="paragrafo1">Insira os seus dados para compra:</p>
@@ -106,7 +107,7 @@
     <div class="bola bola11"></div>
     <div class="bola bola12"></div>
 
-    <script src="{{% static 'js/carrinho.js' %}}"></script>
+    <script src="{% static 'js/carrinho.js' %}"></script>
 
 </body>
 

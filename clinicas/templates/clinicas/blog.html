@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -6,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{% static 'css/menu.css' %}}">
-    <link rel="stylesheet" href="{{% static 'css/blog.css' %}}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,13 +25,13 @@
         <h1>REEM Óticas</h1>
 
         <ul class="menu_menu">
-            <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./produtos.html">Produtos</a></li>
-            <li><a href="./agendamento.html">Agendamento</a></li>
-            <li><a href="./blog.html"><span id="aba_autal">Blog</span></a></li>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'produto' %}">Produtos</a></li>
+            <li><a href="{% url 'agendamento' %}">Agendamento</a></li>
+            <li><a href="{% url 'blog' %}"><span id="aba_autal">Blog</span></a></li>
         </ul>
-        <img src="{{% static 'imagens/icones/icons8-menu-30blog.png' %}}" alt="botão menu" class="menu_btn" open_menu() >
-        <img src="{{% static 'imagens/icones/icons8-delete-30.png' %}}" alt="fechar menu" class="fechar_menu_btn">
+        <img src="{% static 'imagens/icones/icons8-menu-30blog.png' %}" alt="botão menu" class="menu_btn" open_menu() >
+        <img src="{% static 'imagens/icones/icons8-delete-30.png' %}" alt="fechar menu" class="fechar_menu_btn">
 
     </nav>
 
@@ -92,7 +93,7 @@
 
 
     <!--arquivos js-->
-    <script src="{{% static 'js/menu.js' %}}"></script>
+    <script src="{% static 'js/menu.js' %}"></script>
 
 </body>
 

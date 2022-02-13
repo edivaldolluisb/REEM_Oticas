@@ -23,9 +23,9 @@
 
         <ul class="menu_menu">
             <li><a href="#"><span id="aba_autal">Inicio</span></a></li>
-            <li><a href="./produtos.html">Produtos</a></li>
-            <li><a href="./agendamento.html">Agendamento</a></li>
-            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="{% url 'produto' %}">Produtos</a></li>
+            <li><a href="{% url 'agendamento' %}">Agendamento</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
             <li class="entrar"><a href="#">Entrar</a></li>
         </ul>
         <img src="{% static 'imagens/icones/icons8-menu-30.png' %}" alt="botão menu" class="menu_btn" open_menu()>
