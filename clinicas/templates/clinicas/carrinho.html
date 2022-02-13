@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/carrinho.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Carrinho</title>
+</head>
+
+<body>
+    <a href="./produtos.html"><img class="close" src="./imagens/icones/icons8-delete.gif" alt="fechar"></a>
+    <h1>Carrinho de compras</h1>
+    <section id="dados">
+        <p class="paragrafo1">Insira os seus dados para compra:</p>
+        <form action="">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Nome">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" placeholder="Telefone">
+            <select name="" id="distrito">
+                <option value="Água-Grande">Água-Grande</option>
+                <option value="Lembá">Lembá</option>
+                <option value="Lobata">Lobata</option>
+                <option value="Caué">Caué</option>
+                <option value="Mé-Zochi">Mé-Zochi</option>
+                <option value="Cantagalo">Cantagalo</option>
+            </select>
+            <label for="localidade">Localidade:</label>
+            <input type="text" id="localidade" placeholder="Morada">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="email">
+
+            <h2 class="seus_produtos">Os seus produtos:</h2>
+            <!--<div id="carrinho_produtos">
+                <div class="carrinho_produto"><p>Spray</p>11€<p>Quantidade: 2</p>
+                </div>
+                <div class="carrinho_produto"><p>Pano de micrófibra</p>27€<p>Quantidade: 1</p>
+                </div>
+                <div class="carrinho_produto"><p>Pack Óculos e Lentes</p>72€<p>Quantidade: 3</p>
+                </div>
+            </div>-->
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr>
+                        <td>Spray</td>
+                        <td>11€</td>
+                        <td>2</td>
+                        <td><i class="fa-solid fa-xmark"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Pano de micrófibra</td>
+                        <td>27€</td>
+                        <td>1</td>
+                        <td><i class="fa-solid fa-xmark"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Pack Óculos e Lentes</td>
+                        <td>72€</td>
+                        <td>3</td>
+                        <td><i class="fa-solid fa-xmark"></i></td>
+                    </tr>-->
+                </tbody>
+            </table>
+
+            <!--text area para enviar os dados para back end-->
+            <textarea name="Produtos" style="display: none;" id="textarea_produtos" cols="30" rows="10"></textarea>
+
+            <div id="div_total_compras">
+                <p>Total: <span></span>€</p>
+                <!--input para enviar o total para back-end-->
+                <input type="hidden" name="" value="" id="input_total">
+            </div>
+
+            <button type="submit">finalizar compra</button>
+        </form>
+    </section>
+    <section class="forma_entrega">
+        <h2>Forma de entrega dos produtos</h2>
+        <ul>
+            <li>O sue produto será separado na loja física de modo com que que o cliente terá que requerer a mesma apra
+                pegar o seu produto.</li>
+            <li>A outra forma caso o cliente queira, poderá ser feita a entrega ao lugar indicado pelo mesmo, sendo
+                assim cobrado um valor adicional pelo transporte tendo em conta o lugar da entrega.</li>
+        </ul>
+        <p class="paragrafo2">Entraremos em contato com o cliente para a confirmaçpão da compra</p>
+    </section>
+
+    <div class="bola bola11"></div>
+    <div class="bola bola12"></div>
+
+    <script src="./js/carrinho.js"></script>
+
+</body>
+
+</html>

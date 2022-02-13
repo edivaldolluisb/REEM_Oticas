@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/agendamento.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+
+    <title>Agendamento</title>
+</head>
+
+<body>
+
+    <!--Menu-->
+    <nav>
+        <h1>REEM Óticas</h1>
+
+        <ul class="menu_menu">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./produtos.html">Produtos</a></li>
+            <li><a href="./agendamento.html"><span id="aba_autal">Agendamento</span></a></li>
+            <li><a href="./blog.html">Blog</a></li>
+        </ul>
+        <img src="./imagens/icones/icons8-menu-30.png" alt="botão menu" class="menu_btn" open_menu() >
+        <img src="./imagens/icones/icons8-delete-30(1).png" alt="fechar menu" class="fechar_menu_btn">
+
+    </nav>
+
+    <main>
+        <h2>Agendamento</h2>
+        <p class="texto4">Estamos abertos das 8 às 12 e das 14 às 18 nos dias uteis e aos sábados das 8 ás 13</p>
+        <p><strong>Preencha os dados</strong></p>
+        <form action="#" method="POST">
+
+            <label for="nome">Seu nome</label>
+            <input type="text" name="" id="nome" placeholder="Nome a colocar no agendamento">
+            <label for="idade">Idade</label>
+            <input type="number" name="" id="idade" placeholder="Idade">
+            <label for="morada">Morada</label>
+            <input type="text" id="morada" placeholder="Sua morada">
+            <label for="telefone">Númeoro de telefone</label>
+            <input type="tel" name="" id="telefone" placeholder="Seu número de telefone">
+            <label for="data">Clique no espaço abaixo para selecionar a data</label>
+            <input type="datetime-local" id="data">
+            <button type="submit">agendar</button>
+
+        </form>
+        <img src="./imagens/undraw_doctors_hwty.svg" alt="dotor e enfermeira">
+
+    </main>
+
+    <!--rodapé-->
+    <footer>
+        <p>Veja o mundo com amor &copy;REEM Óticas todos os diretios reservados</p>
+        <a href="#">Termos de uso</a> | <a href="#">Politicas de privacidade</a>
+    </footer>
+    
+
+
+    <!--arquivos js-->
+    <script src="./js/menu.js"></script>
+
+</body>
+
+</html>
