@@ -10,7 +10,10 @@ def index(request):
 
 
 def produto(request):
-    return render(request, 'clinicas/produtos.html')
+    produtos = Produto.objects.all()
+    return render(request, 'clinicas/produtos.html', {
+        'produtos': produtos
+    })
 
 
 def carrinho(request):

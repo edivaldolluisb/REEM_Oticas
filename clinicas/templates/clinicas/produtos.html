@@ -50,66 +50,18 @@
             <p>A possibilidade de comprar os seus produtos oculares online de forma prática e rápida</p>
         </div>
         <section class="todos_produtos">
+            {% for produto in produtos %}
             <div class="produto">
-                <img src="{% static 'imagens/Porta_oculos.jpg' %}" alt="porta óculos">
-                <p>Porta Óculos</p>
-                <p>32€</p>
+                <img src="{{ produto.imagem.url}}" alt="porta óculos">
+                <p>{{ produto.nome }}</p>
+                <p>{{ produto.preco }}€</p>
                 <form action="#" method="POST">
                     <input type="number" name="" id="prod_qt11" placeholder="Quantidade" min="0">
                     <button type="button" onclick="pegar_produto(11, 'Porta Óculos', 32)">adicionar</button>
                 </form>
-
             </div>
-            <div class="produto">
-                <img src="{% static 'imagens/pexels-nataliya-vaitkevich-5843432.jpg' %}" alt="cpnjunto oculos">
-                <p>Pack Óculos e Lentes</p>
-                <p>72€</p>
-                <form action="#" method="POST">
-                    <input type="number" name="" id="prod_qt1" placeholder="Quantidade" min="0">
-                    <button type="button" onclick="pegar_produto(1, 'Pack Óculos e Lentes',  72)">adicionar</button>
-                </form>
+            {% endfor %}
 
-            </div>
-            <div class="produto">
-                <img src="{% static 'imagens/oculos_de_sol.jpg' %}" alt="oculos de sol">
-                <p>Óculos de Sol</p>
-                <p>23€</p>
-                <form action="#" method="POST">
-                    <input type="number" name="" id="prod_qt2" placeholder="Quantidade" min="0">
-                    <button type="button" onclick="pegar_produto(2, 'Óculos de Sol',  23)">adicionar</button>
-                </form>
-
-            </div>
-            <div class="produto">
-                <img src="{% static 'imagens/pexels-nataliya-vaitkevich-5843475.jpg' %}" alt="lentes de contato">
-                <p>Lente de contato</p>
-                <p>90€</p>
-                <form action="#" method="POST">
-                    <input type="number" name="" id="prod_qt3" placeholder="Quantidade" min="0">
-                    <button type="button" onclick="pegar_produto(3, 'Lente de contato',  90)">adicionar</button>
-                </form>
-
-            </div>
-            <div class="produto">
-                <img src="{% static 'imagens/pano_limpar.jpg' %}" alt="pano_limpar">
-                <p>Pano de micrófibra</p>
-                <p>27€</p>
-                <form action="#" method="POST">
-                    <input type="number" name="" id="prod_qt4" placeholder="Quantidade" min="0">
-                    <button type="button" onclick="pegar_produto(4, 'Pano de micrófibra',  27)">adicionar</button>
-                </form>
-
-            </div>
-            <div class="produto">
-                <img src="{% static 'imagens/spary.jpg' %}" alt="spary">
-                <p>Spray</p>
-                <p>11€</p>
-                <form action="#" method="POST">
-                    <input type="number" name="" id="prod_qt5" placeholder="Quantidade" min="0" >
-                    <button type="button" onclick="pegar_produto(5, 'Spray',  11)">adicionar</button>
-                </form>
-
-            </div>
             <!--Paginação-->
             <div id="paginacao">
                 <div class="paginacao">

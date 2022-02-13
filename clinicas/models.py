@@ -7,7 +7,8 @@ from django.utils import timezone
 class Produto(models.Model):
     nome = models.CharField(max_length=250)
     preco = models.FloatField(default=0.0)
-    data_criacao = models.DateTimeField(default=timezone.now)
+    imagem = models.ImageField(blank=True)
+    data_criacao = models.DateTimeField(default=timezone.now, blank=True)
 
     def __str__(self):
         return self.nome
