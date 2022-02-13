@@ -10,6 +10,7 @@ class ProdutoAdmin(admin.ModelAdmin):
 
 class EncomendaAdmin(admin.ModelAdmin):
     list_display = ('nome', 'telefone', 'morada')
+    list_display_links = ('nome', 'telefone')
 
 
 class AgendamentoAdmin(admin.ModelAdmin):
