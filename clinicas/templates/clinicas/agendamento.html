@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/menu.css">
-    <link rel="stylesheet" href="./css/agendamento.css">
+    <link rel="stylesheet" href="{{% static 'css/style.css' %}}">
+    <link rel="stylesheet" href="{{% static 'css/menu.css' %}}">
+    <link rel="stylesheet" href="{{% static 'css/agendamento.css' %}}">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +31,8 @@
             <li><a href="./agendamento.html"><span id="aba_autal">Agendamento</span></a></li>
             <li><a href="./blog.html">Blog</a></li>
         </ul>
-        <img src="./imagens/icones/icons8-menu-30.png" alt="botão menu" class="menu_btn" open_menu() >
-        <img src="./imagens/icones/icons8-delete-30(1).png" alt="fechar menu" class="fechar_menu_btn">
+        <img src="{{% static 'imagens/icones/icons8-menu-30.png' %}}" alt="botão menu" class="menu_btn" open_menu() >
+        <img src="{{% static 'imagens/icones/icons8-delete-30(1).png' %}}" alt="fechar menu" class="fechar_menu_btn">
 
     </nav>
 
@@ -55,7 +55,7 @@
             <button type="submit">agendar</button>
 
         </form>
-        <img src="./imagens/undraw_doctors_hwty.svg" alt="dotor e enfermeira">
+        <img src="{{% static 'imagens/undraw_doctors_hwty.svg' %}}" alt="dotor e enfermeira">
 
     </main>
 
@@ -68,7 +68,7 @@
 
 
     <!--arquivos js-->
-    <script src="./js/menu.js"></script>
+    <script src="{{% static 'js/menu.js' %}}"></script>
 
 </body>
 
