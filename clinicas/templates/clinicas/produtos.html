@@ -42,7 +42,7 @@
             <form action="#" method="POST">
                 <input type="search" placeholder="Procure aqui">
             </form>
-            <div class="carrinho_de_compras"><a href="./carrinho.html"><img
+            <div class="carrinho_de_compras"><a href="{% url 'carrinho' %}"><img
                         src="{% static 'imagens/icones/icons8-shopping-bag-full-30.png' %}" alt="carrinho de compras"><span
                         class="numero_itens">0</span></a></div>
         </div>
@@ -52,12 +52,12 @@
         <section class="todos_produtos">
             {% for produto in produtos %}
             <div class="produto">
-                <img src="{{ produto.imagem.url}}" alt="porta óculos">
+                <img src="{{ produto.imagem.url }}" alt="porta óculos">
                 <p>{{ produto.nome }}</p>
                 <p>{{ produto.preco }}€</p>
                 <form action="#" method="POST">
-                    <input type="number" name="" id="prod_qt11" placeholder="Quantidade" min="0">
-                    <button type="button" onclick="pegar_produto(11, 'Porta Óculos', 32)">adicionar</button>
+                    <input type="number" name="" id="prod_qt{{produto.id}}" placeholder="Quantidade" min="0">
+                    <button type="button" onclick="pegar_produto({{ produto.id }}, '{{ produto.nome }}', {{ produto.preco }})">adicionar</button>
                 </form>
             </div>
             {% endfor %}

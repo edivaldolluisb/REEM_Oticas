@@ -25,4 +25,7 @@ def agendamento(request):
 
 
 def blog(request):
-    return render(request, 'clinicas/blog.html')
+    posts = Blog.objects.all()
+    return render(request, 'clinicas/blog.html', {
+        'posts': posts
+    })
