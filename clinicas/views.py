@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from .models import Blog, Produto, Encomenda, Agendamento
+from .serializers import AgendamentoSerializer
 
 # Create your views here.
 
@@ -20,8 +23,34 @@ def carrinho(request):
     return render(request, 'clinicas/carrinho.html')
 
 
-def apiOverview(request):
-    return JsonResponse('api base point', safe=False)
+@api_view(['GET'])
+def apiAgendamento(request):
+    api_urls = {
+        'List': '/agendamento-list/',
+        'Detail View': '/agendamento-detail/<str:pk>/',
+        'Create': '/agendamento-create/',
+        'Update': 'agendamento-update/<str:pk>/',
+        'Delete': 'agendamento-delete/<str:pk>/',
+    }
+
+    return Response(api_urls)
+
+
+@api_view(['GET'])
+def agendamentolist(request):
+    agendamentos = Agendamento.objects.all()
+    serializer = AgendamentoSerializer(agendamentos, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def agendamentocreate(request):
+    serializer = AgendamentoSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
 
 
 def agendamento(request):
