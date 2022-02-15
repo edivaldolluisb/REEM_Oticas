@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import JsonResponse
 from .models import Blog, Produto, Encomenda, Agendamento
 
 # Create your views here.
@@ -18,6 +18,10 @@ def produto(request):
 
 def carrinho(request):
     return render(request, 'clinicas/carrinho.html')
+
+
+def apiOverview(request):
+    return JsonResponse('api base point', safe=False)
 
 
 def agendamento(request):
