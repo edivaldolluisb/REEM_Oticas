@@ -108,6 +108,67 @@
     <div class="bola bola12"></div>
 
     <script src="{% static 'js/carrinho.js' %}"></script>
+    <script>
+
+        // CSRF Token
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+
+        /*fim do csrf*/
+
+        var formulario = document.querySelector('form')
+        formulario.addEventListener('submit', function (e) {
+            e.preventDefault()
+            console.log('form submitted')
+
+            // enviar os dados
+            var url = 'http://127.0.0.1:8000/api/encomenda-create/'
+            // pegar os valores do formulário
+            var nome_requerente = document.querySelector('#nome').value
+            var telefone_requerente = parseInt(document.getElementById('telefone').value)
+            var distrito_requerente = document.querySelector('#distrito').value
+            var morada_requerente = document.querySelector('#localidade').value
+            var email_requerente = document.querySelector('#email').value
+            var produtos = document.querySelector('#textarea_produtos').value
+            var total = document.querySelector('#input_total').value
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                    'X-CSRFToken': csrftoken,
+                },
+                body: JSON.stringify({
+                    'nome': nome_requerente,
+                    'telefone': telefone_requerente,
+                    'distrito': distrito_requerente,
+                    'morada': morada_requerente,
+                    'email': email_requerente,
+                    'lista_produtos': produtos,
+                    'total': total,
+                })
+            }).then(function (response) {
+                console.log('encomenda registada')
+                document.querySelector('form').reset()
+            })
+        })
+
+    </script>
 
 </body>
 
