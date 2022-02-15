@@ -30,6 +30,7 @@ class Encomenda(models.Model):
 class Agendamento(models.Model):
     nome = models.CharField(max_length=250)
     idade = models.PositiveSmallIntegerField(null=True, blank=True)
+    morada = models.CharField(max_length=300, default='Sem morada')  # localidade
     telefone = models.PositiveIntegerField(blank=True, null=True)
     # email = models.EmailField
     data_agendada = models.DateTimeField(default=timezone.now, verbose_name='Data agendada')

@@ -32,7 +32,7 @@
             <li><a href="{% url 'agendamento' %}"><span id="aba_autal">Agendamento</span></a></li>
             <li><a href="{% url 'blog' %}">Blog</a></li>
         </ul>
-        <img src="{% static 'imagens/icones/icons8-menu-30.png' %}" alt="botão menu" class="menu_btn" open_menu() >
+        <img src="{% static 'imagens/icones/icons8-menu-30.png' %}" alt="botão menu" class="menu_btn" open_menu()>
         <img src="{% static 'imagens/icones/icons8-delete-30(1).png' %}" alt="fechar menu" class="fechar_menu_btn">
 
     </nav>
@@ -41,7 +41,7 @@
         <h2>Agendamento</h2>
         <p class="texto4">Estamos abertos das 8 às 12 e das 14 às 18 nos dias uteis e aos sábados das 8 ás 13</p>
         <p><strong>Preencha os dados</strong></p>
-        <form action="{% url 'agendamento' %}" method="POST">
+        <form method="POST">
             {% csrf_token %}
 
             <label for="nome">Seu nome</label>
@@ -66,11 +66,70 @@
         <p>Veja o mundo com amor &copy;REEM Óticas todos os diretios reservados</p>
         <a href="#">Termos de uso</a> | <a href="#">Politicas de privacidade</a>
     </footer>
-    
+
 
 
     <!--arquivos js-->
     <script src="{% static 'js/menu.js' %}"></script>
+
+    <script>
+
+        // CSRF Token
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+
+        /*fim do csrf*/
+
+        var formulario = document.querySelector('form')
+        formulario.addEventListener('submit', function (e) {
+            e.preventDefault()
+            console.log('form submitted')
+
+            // enviar os dados
+            var url = 'http://127.0.0.1:8000/api/agendamento-create/'
+            // pegar os valores do formulário
+            var nome = document.querySelector('#nome').value
+            var idade = document.querySelector('#idade').value
+            var morada = document.querySelector('#morada').value
+            var telefone = document.querySelector('#telefone').value
+            var data = document.querySelector('#data').value
+
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                    'X-CSRFToken': csrftoken,
+                },
+                body: JSON.stringify({
+                    'nome': nome,
+                    'idade': idade,
+                    'morada': morada,
+                    'telefone': telefone,
+                    'data_agendada': data,
+                })
+            }).then(function (response) {
+                console.log('formulário enviado')
+                document.querySelector('form').reset()
+            })
+        })
+
+    </script>
 
 </body>
 
