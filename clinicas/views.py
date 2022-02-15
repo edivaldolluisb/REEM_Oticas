@@ -21,6 +21,14 @@ def carrinho(request):
 
 
 def agendamento(request):
+    # if request.method == 'POST':
+    #     print('clicou no submit')
+    #     nome = request.POST.get('nome', None)
+    #     idade = request.POST.get('idade', None)
+    #     morada = request.POST.get('morada', None)
+    #     telefone = request.POST.get('telefone', None)
+    #     data = request.POST.get('data', None)
+    #     print(nome, idade, morada, telefone, data)
     return render(request, 'clinicas/agendamento.html')
 
 
