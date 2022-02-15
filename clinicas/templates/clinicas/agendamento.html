@@ -52,6 +52,8 @@
             <input type="text" name="morada" id="morada" placeholder="Sua morada">
             <label for="telefone">Númeoro de telefone</label>
             <input type="tel" name="telefone" id="telefone" placeholder="Seu número de telefone">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Seu email">
             <label for="data">Clique no espaço abaixo para selecionar a data</label>
             <input type="datetime-local" name="data" id="data">
             <button type="submit">agendar</button>
@@ -107,6 +109,7 @@
             var idade = document.querySelector('#idade').value
             var morada = document.querySelector('#morada').value
             var telefone = document.querySelector('#telefone').value
+            var email = document.querySelector('#email').value
             var data = document.querySelector('#data').value
 
 
@@ -121,6 +124,7 @@
                     'idade': idade,
                     'morada': morada,
                     'telefone': telefone,
+                    'email': email,
                     'data_agendada': data,
                 })
             }).then(function (response) {

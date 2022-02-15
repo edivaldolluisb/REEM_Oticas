@@ -32,7 +32,7 @@ class Agendamento(models.Model):
     idade = models.PositiveSmallIntegerField(null=True, blank=True)
     morada = models.CharField(max_length=300, default='Sem morada')  # localidade
     telefone = models.PositiveIntegerField(blank=True, null=True)
-    # email = models.EmailField
+    email = models.EmailField(blank=True)
     data_agendada = models.DateTimeField(default=timezone.now, verbose_name='Data agendada')
     data_criacao = models.DateTimeField(default=timezone.now,
                                         verbose_name='Data da criacao ')
