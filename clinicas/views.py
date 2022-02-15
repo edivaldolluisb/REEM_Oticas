@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Blog, Produto, Encomenda, Agendamento
-from .serializers import AgendamentoSerializer
+from .serializers import AgendamentoSerializer, EncomendaSerializer
 
 # Create your views here.
 
@@ -19,8 +19,41 @@ def produto(request):
     })
 
 
+# api do carrinho/encomenda
+@api_view(['GET'])
+def apiEncomenda(request):
+    api_urls = {
+        'List': '/encomenda-list/',
+        'Detail View': '/encomenda-detail/<str:pk>/',
+        'Create': '/encomenda-create/',
+        'Update': 'encomenda-update/<str:pk>/',
+        'Delete': 'encomenda-delete/<str:pk>/',
+    }
+
+    return Response(api_urls)
+
+
+@api_view(['GET'])  # retorna os agendamentos
+def encomendalist(request):
+    agendamentos = Encomenda.objects.all()
+    serializer = EncomendaSerializer(agendamentos, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['POST'])  # permite adicionar agendamentos na base de dados
+def encomendacreate(request):
+    serializer = EncomendaSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
+
+
 def carrinho(request):
     return render(request, 'clinicas/carrinho.html')
+
+# api do agendamento
 
 
 @api_view(['GET'])
@@ -36,14 +69,14 @@ def apiAgendamento(request):
     return Response(api_urls)
 
 
-@api_view(['GET'])
+@api_view(['GET'])  # retorna os agendamentos
 def agendamentolist(request):
     agendamentos = Agendamento.objects.all()
     serializer = AgendamentoSerializer(agendamentos, many=True)
     return Response(serializer.data)
 
 
-@api_view(['POST'])
+@api_view(['POST'])  # permite adicionar agendamentos na base de dados
 def agendamentocreate(request):
     serializer = AgendamentoSerializer(data=request.data)
 
