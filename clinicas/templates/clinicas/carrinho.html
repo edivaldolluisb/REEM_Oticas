@@ -25,9 +25,9 @@
         <p class="paragrafo1">Insira os seus dados para compra:</p>
         <form action="">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" placeholder="Nome">
+            <input type="text" id="nome" name="nome" placeholder="Nome" required>
             <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="Telefone">
+            <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
             <select name="distrito" id="distrito">
                 <option value="Água-Grande">Água-Grande</option>
                 <option value="Lembá">Lembá</option>
@@ -37,7 +37,7 @@
                 <option value="Cantagalo">Cantagalo</option>
             </select>
             <label for="localidade">Localidade:</label>
-            <input type="text" id="localidade" name="morada" placeholder="Morada">
+            <input type="text" id="localidade" name="morada" placeholder="Morada" required>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="email">
 
@@ -92,6 +92,8 @@
 
             <button type="submit">finalizar compra</button>
         </form>
+        <div id="Mensagens">
+        </div>
     </section>
     <section class="forma_entrega">
         <h2>Forma de entrega dos produtos</h2>
