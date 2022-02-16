@@ -59,6 +59,7 @@
             <button type="submit">agendar</button>
 
         </form>
+        <div id="Mensagens"></div>
         <img src="{% static 'imagens/undraw_doctors_hwty.svg' %}" alt="dotor e enfermeira">
 
     </main>
@@ -75,6 +76,21 @@
     <script src="{% static 'js/menu.js' %}"></script>
 
     <script>
+        
+
+        /*menssagem para mostrar adicionado ao produto*/
+
+        function agendamentoMsg() {
+            var Mensagens = document.querySelector('#Mensagens')
+
+            const div = document.createElement("div");
+            const texto = document.createTextNode(" Agendamento Resgistado");
+            div.appendChild(texto);
+            div.setAttribute("class", "added_carrinho_message")
+
+            Mensagens.appendChild(div);
+        }
+
 
         // CSRF Token
 
@@ -129,6 +145,7 @@
                 })
             }).then(function (response) {
                 console.log('formulário enviado')
+                agendamentoMsg()
                 document.querySelector('form').reset()
             })
         })
