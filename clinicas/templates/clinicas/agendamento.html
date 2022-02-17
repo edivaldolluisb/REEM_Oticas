@@ -56,7 +56,9 @@
             <input type="email" name="email" id="email" placeholder="Seu email">
             <label for="data">Clique no espaço abaixo para selecionar a data</label>
             <input type="datetime-local" name="data" id="data">
-            <button type="submit">agendar</button>
+            
+            <button type="submit" disabled>agendar</button>
+            <p>Precisa Preencher todos os dados para poder agendar</p>
 
         </form>
         <div id="Mensagens"></div>
@@ -74,6 +76,7 @@
 
     <!--arquivos js-->
     <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/agendamento.js' %}"></script>
 
     <script>
         

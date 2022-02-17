@@ -58,7 +58,7 @@ form button{
     border-style: none;
     margin: 2% auto 2% 0;
     padding: 0.5%;
-    background-color: #00BFA6;
+    background-color: #25d78c;
     color: #2F4858;
     border-radius: 2px;
     font-weight: bold;
@@ -69,6 +69,13 @@ form button:hover{
     color: #2F4858;
 }
 
+form button:disabled{
+    background-color: #25d78d94;
+    color: #2F4858;
+}
+form p {
+    color: #fff;
+}
 
 /* added to cart message*/
 #Mensagens{
@@ -99,8 +106,6 @@ form button:hover{
     91%, 99%  {opacity: 0.8;}
     100% {opacity: 0;}
 }
-
-
 main{
     margin-bottom: 20%;
 }
