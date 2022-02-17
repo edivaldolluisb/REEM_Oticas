@@ -22,6 +22,7 @@ class AgendamentoAdmin(admin.ModelAdmin):
 
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('id', 'cabecalho', 'texto_span')
+    list_display_links = ('id', 'cabecalho')
     list_per_page = 30
 
 
