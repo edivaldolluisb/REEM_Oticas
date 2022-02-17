@@ -10,13 +10,13 @@ class ProdutoAdmin(admin.ModelAdmin):
 
 
 class EncomendaAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'telefone', 'morada')
+    list_display = ('nome', 'telefone', 'morada', 'entregue')
     list_display_links = ('nome', 'telefone')
     list_per_page = 30
 
 
 class AgendamentoAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'telefone', 'data_agendada')
+    list_display = ('nome', 'telefone', 'data_agendada', 'finalizado')
     list_per_page = 30
 
 
