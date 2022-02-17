@@ -107,6 +107,11 @@ def agendamento(request):
 
 def blog(request):
     posts = Blog.objects.all()
+    
+    # paginação dos produtos
+    paginator = Paginator(posts, 10)  # Show * contacts per page
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
     return render(request, 'clinicas/blog.html', {
         'posts': posts
     })
