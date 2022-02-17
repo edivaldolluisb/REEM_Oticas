@@ -4,6 +4,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Blog, Produto, Encomenda, Agendamento
 from .serializers import AgendamentoSerializer, EncomendaSerializer
+# paginação
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -13,7 +15,12 @@ def index(request):
 
 
 def produto(request):
-    produtos = Produto.objects.all()
+    produtos_list = Produto.objects.all()
+
+    # paginação dos produtos
+    paginator = Paginator(produtos_list, 10)  # Show * contacts per page
+    page = request.GET.get('page')
+    produtos = paginator.get_page(page)
     return render(request, 'clinicas/produtos.html', {
         'produtos': produtos
     })

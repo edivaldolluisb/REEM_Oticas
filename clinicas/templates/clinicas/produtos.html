@@ -43,8 +43,8 @@
                 <input type="search" placeholder="Procure aqui">
             </form>
             <div class="carrinho_de_compras"><a href="{% url 'carrinho' %}"><img
-                        src="{% static 'imagens/icones/icons8-shopping-bag-full-30.png' %}" alt="carrinho de compras"><span
-                        class="numero_itens">0</span></a></div>
+                        src="{% static 'imagens/icones/icons8-shopping-bag-full-30.png' %}"
+                        alt="carrinho de compras"><span class="numero_itens">0</span></a></div>
         </div>
         <div class="texto3">
             <p>A possibilidade de comprar os seus produtos oculares online de forma prática e rápida</p>
@@ -57,7 +57,8 @@
                 <p>{{ produto.preco }}€</p>
                 <form action="#" method="POST">
                     <input type="number" name="" id="prod_qt{{produto.id}}" placeholder="Quantidade" min="0">
-                    <button type="button" onclick="pegar_produto({{ produto.id }}, '{{ produto.nome }}', {{ produto.preco }})">adicionar</button>
+                    <button type="button"
+                        onclick="pegar_produto({{ produto.id }}, '{{ produto.nome }}', {{ produto.preco }})">adicionar</button>
                 </form>
             </div>
             {% endfor %}
@@ -68,11 +69,19 @@
             <!--Paginação-->
             <div id="paginacao">
                 <div class="paginacao">
-                    <a href="#"><span>«</span></a>
-                    <a href="#"><span>1</span></a>
-                    <a href="#"><span>2</span></a>
-                    <a href="#"><span>3</span></a>
-                    <a href="#"><span>»</span></a>
+                    {% if produtos.has_previous %}
+                    <a href="?page=1"><span>primeira</span></a>
+                    <a href="?page={{ produtos.previous_page_number }}"><span>«</span></a>
+                    <a href="?page={{ produtos.previous_page_number }}"><span>{{ produtos.previous_page_number }}</span></a>
+                    {% endif %}
+                    
+                    <a href="#"><span>{{ produtos.number }}</span></a>
+                    
+                    {% if produtos.has_next %}
+                    <a href="?page={{ produtos.next_page_number }}"><span>{{ produtos.next_page_number }}</span></a>
+                    <a href="?page={{ produtos.next_page_number }}"><span>»</span></a>
+                    <a href="?page={{ produtos.paginator.num_pages }}"><span>última</span></a>
+                    {% endif %}
                 </div>
             </div>
 
