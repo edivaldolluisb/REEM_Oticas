@@ -22,6 +22,7 @@ class Encomenda(models.Model):
     email = models.EmailField(blank=True)
     lista_produtos = models.TextField(verbose_name='Lista de produtos')
     total = models.PositiveSmallIntegerField(verbose_name='Valor total da compra')  # editable=False
+    entregue = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nome
@@ -34,8 +35,8 @@ class Agendamento(models.Model):
     telefone = models.PositiveIntegerField(blank=True, null=True)
     email = models.EmailField(blank=True)
     data_agendada = models.DateTimeField(default=timezone.now, verbose_name='Data agendada')
-    data_criacao = models.DateTimeField(default=timezone.now,
-                                        verbose_name='Data da criacao ')
+    data_criacao = models.DateTimeField(default=timezone.now, verbose_name='Data da criacao ')
+    finalizado = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nome
