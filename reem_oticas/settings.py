@@ -117,12 +117,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# configuração para heroku
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# fim da configuração
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -133,7 +127,14 @@ STATICFILES_DIRS = [
 ]
 # configuração para guardar as imagens
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
+
+
+# configuração para heroku
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# fim da configuração
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

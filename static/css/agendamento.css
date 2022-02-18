@@ -1,0 +1,139 @@
+h2{
+    margin-left: 5%;
+    text-align: center;
+    color: #25d78c;
+}
+.texto4{
+    margin: 2% 5%;
+    color: #ffffff;
+}
+p:nth-child(3) {
+    margin: 2% 5%;
+}
+
+/*formulário*/
+
+form{
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 10pt;
+}
+form input{
+    max-width: 50%;
+    margin-bottom: 1%;
+
+    padding: 0.2rem;
+    border-style: none;
+    border-radius: 2px;
+    outline-color: #25d78c;
+}
+input[type=text]{
+    max-width: 30%;
+    transition: max-width 1s;
+}
+input[type=text]:focus{
+    max-width: 60%;
+}
+#nome{
+    max-width: 50%;
+}
+#telefone{
+    max-width: 12rem;
+}
+#idade{
+    max-width: 3rem;
+}
+#data{
+    max-width: 10rem;
+}
+
+form label{
+    color: #fff;
+    max-width: 50%;
+}
+form button{
+    width: 20%;
+    border-style: none;
+    margin: 2% auto 2% 0;
+    padding: 0.5%;
+    background-color: #25d78c;
+    color: #2F4858;
+    border-radius: 2px;
+    font-weight: bold;
+}
+form button:hover{
+    border: 3px solid #00BFA6;
+    background-color: #fff;
+    color: #2F4858;
+}
+
+form button:disabled{
+    background-color: #25d78d94;
+    color: #2F4858;
+}
+form p {
+    color: #fff;
+}
+
+/* added to cart message*/
+#Mensagens{
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+}
+.added_carrinho_message{
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background-color: #2F4858;
+    font-weight: bold;
+    color: #fff;
+    padding: 1rem 0.5rem;
+    /*animação*/
+    animation-name: adicionado;
+    animation-duration: 4s;  
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes adicionado {
+    from {bottom: 1.5rem;}
+    to {bottom: 10rem;}
+
+    0%   {opacity: 0;}
+    1%, 9%  {opacity: 1;}
+    91%, 99%  {opacity: 0.8;}
+    100% {opacity: 0;}
+}
+main{
+    margin-bottom: 20%;
+}
+
+main img{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: -1;
+    max-width: 70%;
+}
+
+@media screen and (max-width: 436px){
+
+    form{
+        margin:auto 5%;
+        display: flex;
+        flex-direction: column;
+    
+        font-size: 10pt;
+    }
+    #nome, input[type=text]:focus, input[type=text]{
+        max-width: 100%;
+    }
+    form button{
+        width: 100%;
+        margin: 1rem auto 1rem;
+        padding: 0.5rem 2rem;
+    }
+
+}
