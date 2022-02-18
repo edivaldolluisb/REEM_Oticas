@@ -25,6 +25,21 @@ def produto(request):
         'produtos': produtos
     })
 
+def pesquisa(request):
+    termo = request.GET.get('termo')
+    print(termo)
+    produtos_list = Produto.objects.order_by('-id').filter(
+        nome__icontains=termo
+    )
+
+    # paginação dos produtos
+    paginator = Paginator(produtos_list, 10)  # Show * contacts per page
+    page = request.GET.get('page')
+    produtos = paginator.get_page(page)
+    return render(request, 'clinicas/pesquisa.html', {
+        'produtos': produtos
+    })
+
 
 # api do carrinho/encomenda
 @api_view(['GET'])
