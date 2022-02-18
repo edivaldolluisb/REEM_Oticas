@@ -1,0 +1,1 @@
+web: gunicorn reem_oticas.wsgi --log-file -
