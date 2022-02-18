@@ -8,6 +8,7 @@ class Produto(models.Model):
     nome = models.CharField(max_length=250)
     preco = models.FloatField(default=0.0)
     imagem = models.ImageField(blank=True)
+    url_imagem = models.URLField(default='https://images.pexels.com/photos/946727/pexels-photo-946727.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
     data_criacao = models.DateTimeField(default=timezone.now, blank=True)
     disponivel = models.BooleanField(default=True)
 

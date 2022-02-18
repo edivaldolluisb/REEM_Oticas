@@ -53,7 +53,7 @@
             {% for produto in produtos %}
             {% if produto.disponivel %}
             <div class="produto">
-                <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+                <img src="{{ produto.url_imagem }}" alt="{{ produto.nome }}"><!--{{ produto.imagem.url }}-->
                 <p>{{ produto.nome }}</p>
                 <p>{{ produto.preco }}€</p>
                 <form action="#" method="POST">
