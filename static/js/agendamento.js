@@ -36,7 +36,7 @@ function input_verify() {
         _inputs += 1
     }
     console.log(_inputs)
-    if (_inputs == 6 && data != '') {
+    if (_inputs >= 6 && data != '') {
         botao.removeAttribute('disabled')
     }
 
