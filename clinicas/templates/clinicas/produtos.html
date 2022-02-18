@@ -51,6 +51,7 @@
         </div>
         <section class="todos_produtos">
             {% for produto in produtos %}
+            {% if produto.disponivel %}
             <div class="produto">
                 <img src="{{ produto.imagem.url }}" alt="porta óculos">
                 <p>{{ produto.nome }}</p>
@@ -61,6 +62,7 @@
                         onclick="pegar_produto({{ produto.id }}, '{{ produto.nome }}', {{ produto.preco }})">adicionar</button>
                 </form>
             </div>
+            {% endif %}
             {% endfor %}
 
             <div id="Mensagens">
