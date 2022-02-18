@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-13f)$vv4l5h@)l!^%ztqpll$kr)qnj4z@5v*@9h$yjgp3pu9p+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['rem-oticas.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['rem-oticas.herokuapp.com', '127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -46,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
