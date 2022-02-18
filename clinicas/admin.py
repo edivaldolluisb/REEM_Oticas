@@ -5,7 +5,7 @@ from .models import Produto, Encomenda, Agendamento, Blog
 
 
 class ProdutoAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'preco')
+    list_display = ('nome', 'preco', 'disponivel')
     list_per_page = 30
     search_fields = ('nome', 'preco')
 
