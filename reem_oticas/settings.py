@@ -131,7 +131,7 @@ MEDIA_URL = 'media/'
 
 
 # configuração para heroku
-STATIC_ROOT = os.path.join('static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # fim da configuração
 
