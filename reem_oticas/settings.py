@@ -126,8 +126,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'templates/static')
 ]
 # configuração para guardar as imagens
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_URL = 'static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'media/'
 
 
 # configuração para heroku
