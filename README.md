@@ -15,7 +15,8 @@ Consulte **Implantação** para saber como implantar o projeto.
 
 - Para poder executar o software precisa ter o python instalado na sua máquina.
 - Saber como usar um teminal / linha de comando. Saber instalar softwares em seu sistema operacional.
-[linnk para a documentação](https://www.python.org/downloads/)
+  
+  [linnk para a documentação](https://www.python.org/downloads/)
 
 ### 🔧 Instalação
 
