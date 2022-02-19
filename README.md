@@ -47,12 +47,12 @@ disponivéis em:
 para os agendamentos ->
 + http://127.0.0.1:8000/api/agendamento/
 + http://127.0.0.1:8000/api/agendamento-list/  -- GET
-+ http://127.0.0.1:8000/api/agendamento-create/  --POSt
++ http://127.0.0.1:8000/api/agendamento-create/  --POST
 
 para as encomendas ->
 + http://127.0.0.1:8000/api/encomenda/
 + http://127.0.0.1:8000/encomenda-list/  -- GET
-+ http://127.0.0.1:8000/encomenda-create/  --POSt
++ http://127.0.0.1:8000/encomenda-create/  --POST
 
 ## 🛠️ Construído com
 
