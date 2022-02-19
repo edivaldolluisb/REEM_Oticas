@@ -20,51 +20,39 @@ Consulte **Implantação** para saber como implantar o projeto.
 
 ### 🔧 Instalação
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
-
-Diga como essa etapa será:
++ O django foi instalado em um ambiente virtual (venv)
 
 Para ter um ambiente de execução pronto deve instalar o django na sua máquina caso ainda não o tenha feito, a forma mais fácil de ter a versão mais estável do django é pelo comando *pip*.
 
 ```
 pip install django
 ```
+Ou pode instala todas as coisas necessárias instalando os requerimentos.
+Estando na pasta do projeto digite o seguinte comando:
 
 ```
-Dar exemplos
+pip install -r requirements.txt
 ```
-
-E repita:
-
+Após isso nós podemos rodar o web server de desenvolvimento dentro dessa pasta usando o manage.py e o comando runserver
 ```
-Até finalizar
+python manage.py runserver
 ```
+Uma vez que o servidor está operando, você pode acessar o site colocando a seguinte URL no seu navegador local:http://127.0.0.1:8000/.
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
++ Para fins de teste a base de dados utilizada nesse projeto é SQLite3
 
-## ⚙️ Executando os testes
++ Está disponibilizado também duas APIs, uma para o carrinho de compras **Encomendas**, e outra para os agendamentos de consulta **Agendamento**, ambas com apenas metodos GET e POST.
 
-Explicar como executar os testes automatizados para este sistema.
+disponivéis em:
+para os agendamentos ->
++ http://127.0.0.1:8000/api/agendamento/
++ http://127.0.0.1:8000/api/agendamento-list/  -- GET
++ http://127.0.0.1:8000/api/agendamento-create/  --POSt
 
-### 🔩 Analise os testes de ponta a ponta
-
-Explique que eles verificam esses testes e porquê.
-
-```
-Dar exemplos
-```
-
-### ⌨️ E testes de estilo de codificação
-
-Explique que eles verificam esses testes e porquê.
-
-```
-Dar exemplos
-```
-
-## 📦 Desenvolvimento
-
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
+para as encomendas ->
++ http://127.0.0.1:8000/api/encomenda/
++ http://127.0.0.1:8000/encomenda-list/  -- GET
++ http://127.0.0.1:8000/encomenda-create/  --POSt
 
 ## 🛠️ Construído com
 
@@ -77,4 +65,4 @@ Este projeto está sob a licença (MIT) - veja o arquivo [LICENSE.md](https://gi
 
 
 ---
-⌨️ com ❤️ por [Edivaldo Gustavo Bonfim](https://gist.github.com/lohhans) 😊
+⌨️ com ❤️ por [Edivaldo Gustavo Bonfim](https://github.com/edivaldolluisb) 😊
